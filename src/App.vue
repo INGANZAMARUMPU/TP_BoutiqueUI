@@ -1,15 +1,17 @@
 <template>
   <div id="app">
+  	<NavBar/>
+  	<!-- <router-view/> -->
   </div>
 </template>
 
 <script>
-// import Login from "./pages/Login";
+import NavBar from "./components/navbar";
 export default {
-	// components:{
-	// 	Home,
-	// 	"login-page": Login
-	// }
+	components:{
+		NavBar,
+		// "login-page": Login
+	}
 };
 </script>
 
