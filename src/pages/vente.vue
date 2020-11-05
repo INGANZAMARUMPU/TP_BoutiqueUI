@@ -1,11 +1,18 @@
 <template>
   <div>
-  	<h1>Vente</h1>
+  	<Total :total="total"/>
   </div>
 </template>
 
 <script>
+import Total from "../components/total"
 export default {
+	components:{Total,},
+	data(){
+		return{
+			total : this.$store.state.total_vente,
+		}
+	}
 };
 </script>
 
