@@ -8,7 +8,9 @@
 			<hr>
 			<div class="button">Modifier</div>
 			<hr class="separateur">
-			<div class="button">Supprimer</div>
+			<div class="button">Acheter</div>
+			<hr class="separateur">
+			<div class="button">Vendre</div>
 		</div>
 	</div>	
 </template>

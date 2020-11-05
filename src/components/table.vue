@@ -7,6 +7,15 @@
 				<th>Date</th>
 				<th>Actions</th>
 			</tr>
+			<tr v-for="item in items">
+				<td>{{ item.product }}</td>
+				<td>{{ item.qtt }}</td>
+				<td>{{ item.date }}</td>
+				<td>
+					<button>modifier</button>
+					<button>supprimer</button>
+				</td>
+			</tr>
 		</table>
 	</div>
 </template>
@@ -27,10 +36,9 @@ export default{
 }
 table{
 	width: 100%;
-	background: cadetblue;
-	color: white;
 }
 th{
-	width: 25%;
+	color: white;
+	background: cadetblue;
 }
 </style>
