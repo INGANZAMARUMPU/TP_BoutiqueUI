@@ -1,7 +1,9 @@
 <template>
-	<div class="labels">
-		<span>Total:</span>
-		<span>{{ total }} FBu</span>
+	<div class="top">
+		<div class="labels">
+			<span>Total:</span>
+			<span>{{ total }} FBu</span>
+		</div>
 	</div>
 </template>
 <script>
@@ -15,10 +17,16 @@ export default{
 };
 </script>
 <style scoped>
-	.labels{
-		font-weight: bold;
-		padding: 15px 10px;
-		height: 40px;
-		float: right;
-	}
+.top{
+	width: 100%;
+	position: relative;
+}
+.labels{
+	font-weight: bold;
+	padding: 15px 10px;
+	height: 40px;
+	margin-left: auto;
+	text-align: right;
+	padding-right: 10%;
+}
 </style>
