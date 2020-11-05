@@ -3,15 +3,19 @@
 		<div class="body" @click.prevent.stop="">
 			<div class="champ">
 				<label for="name">Name</label>
-				<input type="text" name="name" id="name">
+				<input type="text" disabled="true" id="name">
 			</div>
 			<div class="champ">
-				<label for="prix_achat">Prix d'achat</label>
-				<input type="text" name="prix_achat" id="prix_achat">
+				<label for="qtt">Quantité</label>
+				<input type="text" name="qtt" id="qtt">
 			</div>
 			<div class="champ">
 				<label for="prix_vente">Prix de vente</label>
-				<input type="text" name="prix_vente" id="prix_vente">
+				<input type="text" disabled="true" id="prix_vente">
+			</div>
+			<div class="champ">
+				<label for="date">Date</label>
+				<input type="text" disabled="true" id="date">
 			</div>
 			<div class="buttons">
 				<button @click.prevent.stop="">Valider</button>

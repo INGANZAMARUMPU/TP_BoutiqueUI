@@ -1,10 +1,21 @@
 <template>
-	<div class="item">
+	<div class="item" @click="dialog_mode=true">
 		<h1>+</h1>
+		<DialogProduct v-if="dialog_mode" @done="dialog_mode=false"/>
 	</div>	
 </template>
 <script>
-	
+import DialogProduct from "./dialog_product"
+export default{	
+	components:{
+		DialogProduct	
+	},
+	data(){
+		return {
+			dialog_mode:false,
+		}
+	}
+};
 </script>
 <style scoped>
 .item{
