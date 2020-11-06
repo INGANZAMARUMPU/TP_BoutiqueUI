@@ -1,9 +1,9 @@
 <template>
 	<div class="item">
 		<div class="h2">
-			<span class="title">{{item.product}}</span>
+			<span class="title">{{item.product.name}}</span>
 		</div>
-		<div class="qtt">{{item.qtt}} {{item.unite}}</div>
+		<div class="qtt">{{item.product.qtt}} {{item.product.unite}}</div>
 		<div>
 			<hr>
 			<div class="button" @click="edit_product=true">Modifier</div>

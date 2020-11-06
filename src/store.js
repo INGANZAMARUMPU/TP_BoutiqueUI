@@ -34,25 +34,7 @@ export const store = new Vuex.Store({
 		        "date": "2020-11-04"
 		    }
 		],
-		products: [{
-	        "id": 1,
-	        "prix_achat": 1500,
-	        "prix_vente": 1800,
-	        "product": 'Ibiharage Bitoto',
-	        "product_id": 1,
-	        'qtt':'20',
-	        'unite':'Kg'
-	    },
-	    {
-	        "id": 1,
-	        "prix_achat": 1200,
-	        "prix_vente": 1500,
-	        "product": 'amata',
-	        "product_id": 1,
-	        'qtt':'10',
-	        'unite':'littres',
-	    }
-	    ],
+		products: [],
 		total_achat : 0,
 		total_vente : 0
 	},

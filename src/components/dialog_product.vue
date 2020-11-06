@@ -4,17 +4,27 @@
 			<div class="champ">
 				<label for="name">Name</label>
 				<input type="text" name="name" id="name"
-					v-model="item.product">
+					v-model="item.product.name">
 			</div>
 			<div class="champ">
 				<label for="prix_achat">Prix d'achat</label>
-				<input type="text" name="prix_achat" id="prix_achat"
+				<input type="number" name="prix_achat" id="prix_achat"
 					v-model="item.prix_achat">
 			</div>
 			<div class="champ">
 				<label for="prix_vente">Prix de vente</label>
-				<input type="text" name="prix_vente" id="prix_vente"
+				<input type="number" name="prix_vente" id="prix_vente"
 					v-model="item.prix_vente">
+			</div>
+			<div class="champ">
+				<label for="qtt">Quantité</label>
+				<input type="number" name="qtt" id="qtt"
+					v-model="item.qtt">
+			</div>
+			<div class="champ">
+				<label for="unit">Unité de mesure</label>
+				<input type="text" name="unite" id="unite"
+					v-model="item.unite">
 			</div>
 			<div class="buttons">
 				<button @click.prevent.stop="">Valider</button>
@@ -29,13 +39,14 @@ export default {
 		item:{
 			type:Object,
 			default:{
-		        "id": 0,
 		        "prix_achat": 0,
 		        "prix_vente": 0,
-		        "product": '',
-		        "product_id": 0,
-		        'qtt':'0',
-		        'unite':'',
+		        "product": {
+		            "id": 1,
+		            "name": "",
+		            "qtt": 0,
+		            "unite": ""
+		        }
 		    }
 		}
 	},
