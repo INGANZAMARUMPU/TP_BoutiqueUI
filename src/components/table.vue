@@ -12,29 +12,40 @@
 				<td>{{ item.qtt }}</td>
 				<td>{{ item.date }}</td>
 				<td>
-					<button @click="dialog_mode=true">modifier</button>
+					<button @click="edit(item)">modifier</button>
 					<button>supprimer</button>
 				</td>
 			</tr>
 		</table>
-		<DialogAction v-if="dialog_mode" @done="dialog_mode=false"/>
+		<DialogEditAction v-if="dialog_mode" :is_achat="is_achat" :mvmnt="mvmnt" @done="dialog_mode=false"/>
 	</div>
 </template>
 <script>
-import DialogAction from "./dialog_action"
+import DialogEditAction from "./dialog_action_edit"
 export default{	
 	components:{
-		DialogAction	
+		DialogEditAction	
 	},
 	data(){
 		return {
 			dialog_mode:false,
+			mvmnt : null
 		}
 	},
 	props:{
 		items:{
 			type:Array,
-			default:0
+			default:[]
+		},
+		is_achat:{
+			type: Boolean,
+			default : false
+		}
+	},
+	methods:{
+		edit(mvmnt){
+			this.mvmnt=mvmnt;
+			this.dialog_mode=true;
 		}
 	}
 };

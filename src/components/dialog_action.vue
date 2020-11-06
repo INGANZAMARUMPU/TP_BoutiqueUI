@@ -4,22 +4,22 @@
 			<div class="champ">
 				<label for="name">Name</label>
 				<input type="text" disabled="true" id="name"
-					v-model="mvmnt.name">
+					v-model="item.product">
 			</div>
 			<div class="champ">
 				<label for="qtt">Quantité</label>
 				<input type="number" name="qtt" id="qtt"
-					v-model="mvmnt.qtt">
+					v-model="qtt">
 			</div>
-			<div class="champ">
+			<div class="champ" v-if="is_achat">
+				<label for="prix_achat">Prix d'achat</label>
+				<input type="text" disabled="true" id="prix_achat"
+					v-model="item.prix_achat">
+			</div>
+			<div class="champ" v-else>
 				<label for="prix_vente">Prix de vente</label>
 				<input type="text" disabled="true" id="prix_vente"
-					v-model="mvmnt.prix">
-			</div>
-			<div class="champ">
-				<label for="date">Date</label>
-				<input type="text" disabled="true" id="date"
-					v-model="mvmnt.date">
+					v-model="item.prix_vente">
 			</div>
 			<div class="buttons">
 				<button @click.prevent.stop="">Valider</button>
@@ -32,18 +32,26 @@
 var d = new Date();
 export default {
 	props:{
-		mvmnt:{
-			type: Object,
-			default(){
-				return {
-			        "id": 0,
-			        "product": "",
-			        "product_id": 0,
-			        "prix": 0,
-			        "qtt": 0,
-			        "date": `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
-			    }
+		item:{
+			type:Object,
+			default:{
+		        "id": 0,
+		        "prix_achat": 0,
+		        "prix_vente": 0,
+		        "product": '',
+		        "product_id": 0,
+		        'qtt':'0',
+		        'unite':'',
 		    }
+		},
+		is_achat:{
+			type: Boolean,
+			default : false
+		}
+	},
+	data(){
+		return{
+			qtt:0
 		}
 	},
 	methods:{

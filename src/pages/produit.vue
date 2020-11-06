@@ -1,8 +1,7 @@
 <template>
   <div class="listview">
   	<AddItem/>
-  	<Item :item="{'title':'Ibiharage Bitoto', 'qtt':'20kg'}"/>
-  	<Item :item="{'title':'Amata', 'qtt':'30 litres'}"/>
+  	<Item  v-for="item in items":item="item"/>
   </div>
 </template>
 
@@ -11,6 +10,11 @@ import AddItem from "../components/add_item"
 import Item from "../components/item"
 export default {
 	components:{AddItem, Item},
+	data(){
+		return {
+			items : this.$store.state.products
+		}
+	}
 };
 </script>
 

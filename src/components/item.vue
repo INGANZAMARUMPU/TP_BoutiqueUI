@@ -1,19 +1,19 @@
 <template>
 	<div class="item">
 		<div class="h2">
-			<span class="title">{{item.title}}</span>
+			<span class="title">{{item.product}}</span>
 		</div>
-		<div class="qtt">{{item.qtt}}</div>
+		<div class="qtt">{{item.qtt}} {{item.unite}}</div>
 		<div>
 			<hr>
 			<div class="button" @click="edit_product=true">Modifier</div>
-			<DialogProduct v-if="edit_product" @done="edit_product=false"/>
+			<DialogProduct v-if="edit_product" @done="edit_product=false" :item="item"/>
 			<hr class="separateur">
 			<div class="button" @click="perform_achat=true">Acheter</div>
-			<DialogAction v-if="perform_achat" @done="perform_achat=false"/>
+			<DialogAction v-if="perform_achat" @done="perform_achat=false" :is_achat="true" :item="item"/>
 			<hr class="separateur">
 			<div class="button" @click="perform_vente=true">Vendre</div>
-			<DialogAction v-if="perform_vente" @done="perform_vente=false"/>
+			<DialogAction v-if="perform_vente" @done="perform_vente=false" :item="item"/>
 		</div>
 	</div>	
 </template>

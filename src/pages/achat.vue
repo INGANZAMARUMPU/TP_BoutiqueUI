@@ -1,7 +1,7 @@
 <template>
   <div>
   	<Total :total="total"/>
-  	<Table :items="achats"/>
+  	<Table :items="achats" :is_achat="true"/>
   </div>
 </template>
 
@@ -9,7 +9,6 @@
 import Total from "../components/total"
 import Table from "../components/table"
 export default {
-	components:{Total, Table},
 	components:{Total, Table},
 	data(){
 		return{
