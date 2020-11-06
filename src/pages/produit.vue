@@ -8,11 +8,12 @@
 <script>
 import AddItem from "../components/add_item"
 import Item from "../components/item"
+var this_;
 export default {
 	components:{AddItem, Item},
-	data(){
-		return {
-			items : this.$store.state.products
+	computed:{
+		items() {
+			return this.$store.state.products
 		}
 	}
 };
