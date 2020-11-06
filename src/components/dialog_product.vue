@@ -40,7 +40,7 @@ export default {
 	z-index: 5;
 }
 .body{
-	position: relative;
+	position: absolute;
 	background-color: white;
 	border-radius: 10px;
 	width: 300px;
@@ -52,6 +52,8 @@ export default {
 }
 .champ{
 	margin-bottom: 5px;
+	color: black;
+	text-align: left;
 }
 .buttons{
 	display: flex;

@@ -12,15 +12,25 @@
 				<td>{{ item.qtt }}</td>
 				<td>{{ item.date }}</td>
 				<td>
-					<button>modifier</button>
+					<button @click="dialog_mode=true">modifier</button>
 					<button>supprimer</button>
 				</td>
 			</tr>
 		</table>
+		<DialogAction v-if="dialog_mode" @done="dialog_mode=false"/>
 	</div>
 </template>
 <script>
-export default{
+import DialogAction from "./dialog_action"
+export default{	
+	components:{
+		DialogAction	
+	},
+	data(){
+		return {
+			dialog_mode:false,
+		}
+	},
 	props:{
 		items:{
 			type:Array,

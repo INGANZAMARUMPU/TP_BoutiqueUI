@@ -3,19 +3,23 @@
 		<div class="body" @click.prevent.stop="">
 			<div class="champ">
 				<label for="name">Name</label>
-				<input type="text" disabled="true" id="name">
+				<input type="text" disabled="true" id="name"
+					v-model="mvmnt.name">
 			</div>
 			<div class="champ">
 				<label for="qtt">Quantité</label>
-				<input type="text" name="qtt" id="qtt">
+				<input type="number" name="qtt" id="qtt"
+					v-model="mvmnt.qtt">
 			</div>
 			<div class="champ">
 				<label for="prix_vente">Prix de vente</label>
-				<input type="text" disabled="true" id="prix_vente">
+				<input type="text" disabled="true" id="prix_vente"
+					v-model="mvmnt.prix">
 			</div>
 			<div class="champ">
 				<label for="date">Date</label>
-				<input type="text" disabled="true" id="date">
+				<input type="text" disabled="true" id="date"
+					v-model="mvmnt.date">
 			</div>
 			<div class="buttons">
 				<button @click.prevent.stop="">Valider</button>
@@ -25,7 +29,23 @@
 	</div>
 </template>
 <script>
+var d = new Date();
 export default {
+	props:{
+		mvmnt:{
+			type: Object,
+			default(){
+				return {
+			        "id": 0,
+			        "product": "",
+			        "product_id": 0,
+			        "prix": 0,
+			        "qtt": 0,
+			        "date": `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
+			    }
+		    }
+		}
+	},
 	methods:{
 		exitModal(){
 			this.$emit('done', {})
@@ -44,7 +64,7 @@ export default {
 	z-index: 5;
 }
 .body{
-	position: relative;
+	position: absolute;
 	background-color: white;
 	border-radius: 10px;
 	width: 300px;
@@ -56,6 +76,8 @@ export default {
 }
 .champ{
 	margin-bottom: 5px;
+	color: black;
+	text-align: left;
 }
 .buttons{
 	display: flex;

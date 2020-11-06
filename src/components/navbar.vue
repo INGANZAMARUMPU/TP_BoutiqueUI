@@ -1,15 +1,21 @@
 <template>
 	<div class="nav">
 		<div class="menu-items">
-			<div class="menu">
-				<router-link to="/product">PRODUIT</router-link>
-			</div>
-			<div class="menu">
-				<router-link to="/vente">VENTE</router-link>
-			</div>
-			<div class="menu">
-				<router-link to="/achat">ACHAT</router-link>
-			</div>
+			<router-link to="/product">
+				<div class="menu">
+					PRODUIT
+				</div>
+			</router-link>
+			<router-link to="/vente">
+				<div class="menu">
+					VENTE
+				</div>
+			</router-link>
+			<router-link to="/achat">
+				<div class="menu">
+					ACHAT
+				</div>
+			</router-link>
 		</div>
 	</div>	
 </template>
@@ -29,7 +35,7 @@
 		height: 50px;
 		float: right;
 	}
-	.menu a{
+	a .menu{
 		top: 30%;
 		color: white;
 		text-decoration: none;

@@ -6,20 +6,35 @@
 		<div class="qtt">{{item.qtt}}</div>
 		<div>
 			<hr>
-			<div class="button">Modifier</div>
+			<div class="button" @click="edit_product=true">Modifier</div>
+			<DialogProduct v-if="edit_product" @done="edit_product=false"/>
 			<hr class="separateur">
-			<div class="button">Acheter</div>
+			<div class="button" @click="perform_achat=true">Acheter</div>
+			<DialogAction v-if="perform_achat" @done="perform_achat=false"/>
 			<hr class="separateur">
-			<div class="button">Vendre</div>
+			<div class="button" @click="perform_vente=true">Vendre</div>
+			<DialogAction v-if="perform_vente" @done="perform_vente=false"/>
 		</div>
 	</div>	
 </template>
 <script>
+import DialogProduct from './dialog_product';
+import DialogAction from './dialog_action';
 export default{
 	props:{
 		item:{
 			type:Object,
 			required:true
+		}
+	},
+	components:{
+		DialogProduct, DialogAction
+	},
+	data(){
+		return {
+			edit_product:false,
+			perform_achat:false,
+			perform_vente:false
 		}
 	}
 };	
